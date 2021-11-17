@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { LoginComponent } from "./home/login/login.component";
 
 const routes: Routes = [
   {
@@ -10,15 +8,13 @@ const routes: Routes = [
     redirectTo:'home'
   },
   {
-    path: '',
-    component: HomeComponent,
-    children: [
-      {
-        path: '',
-        component: LoginComponent,
-      }
-    ]
+    path:'home',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule)
   },
+  {
+    path:'animais',
+    loadChildren: () => import('./animais/animais.module').then((m) => m.AnimaisModule)
+  }
 ];
 
 @NgModule({

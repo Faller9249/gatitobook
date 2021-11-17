@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,7 @@ export const routes: Routes = [
     AppComponent,
   ],
   imports: [
-
+    HttpClientModule,
     RouterModule.forRoot(routes),
     BrowserModule,
     HomeModule
