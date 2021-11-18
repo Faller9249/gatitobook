@@ -8,7 +8,12 @@ import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  mensagem = [
+    {
+      user: 'Usuário obrigatótrio',
+      password: 'Senha obrigatótrio'
+    }
+  ]
   user = ''
   password = ''
 
